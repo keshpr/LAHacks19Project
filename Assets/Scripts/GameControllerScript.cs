@@ -28,16 +28,25 @@ public class GameControllerScript : MonoBehaviour
     {
         
     }
-
-    public void incrementResource(string resourceTag, float amount)
+    public void decrementResource(string resourceTag, float amount)
     {
-        GameObject toIncrement;
         int i;
         for (i = 0; i < numResources; i++)
         {
             if (resources[i].tag == resourceTag)
             {
-                toIncrement = resources[i];
+                break;
+            }
+        }
+        resourceAmounts[i] -= amount;
+    }
+    public void incrementResource(string resourceTag, float amount)
+    {
+        int i;
+        for (i = 0; i < numResources; i++)
+        {
+            if (resources[i].tag == resourceTag)
+            {
                 break;
             }
         }
@@ -59,5 +68,10 @@ public class GameControllerScript : MonoBehaviour
         if (activeResource == null)
             return true;
         return false;
+    }
+
+    public GameObject getActiveResource()
+    {
+        return activeResource;
     }
 }

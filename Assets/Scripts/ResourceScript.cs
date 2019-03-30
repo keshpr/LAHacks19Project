@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ResourceScript : MonoBehaviour
 {
-    public float rate;
+    public float incrRate;
     GameControllerScript gameController;
+    public GameObject[] dependentResources;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,13 @@ public class ResourceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float amount = Time.deltaTime * rate;
+        float amount = Time.deltaTime * incrRate;
         gameController.incrementResource(this.gameObject.tag, amount);
     }
 
     void onMouseDown()
     {
-        //gameController.set
+        gameController.setActiveResource(this.gameObject);
     }
 
 }
