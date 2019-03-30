@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Farm
+  - House
+  - River
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - PostProcessing
   - 
   - Resource_Unit
-  - 
+  - Resource
   - 
   - 
   - 
