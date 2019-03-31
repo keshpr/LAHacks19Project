@@ -11,6 +11,10 @@ public class GameControllerScript : MonoBehaviour
     GameObject activeResource;
     int numResources;
     float times;
+
+    public sliderScript foodSlider;
+    public sliderScript populationSlider;
+    public sliderScript waterSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +55,18 @@ public class GameControllerScript : MonoBehaviour
                     resourceAmounts[i] = 0;
                 }
                 break;
+                if (resources[i].tag == "House")
+                {
+                    populationSlider.setSliderValue(resourceAmounts[i]);
+                }
+                else if (resources[i].tag == "Farm")
+                {
+                    foodSlider.setSliderValue(resourceAmounts[i]);
+                }
+                else if (resources[i].tag == "River")
+                {
+                    waterSlider.setSliderValue(resourceAmounts[i]);
+                }
             }
         }
         
