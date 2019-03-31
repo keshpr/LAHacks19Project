@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Level : MonoBehaviour
+public class meterScript : MonoBehaviour
 {
-    private int level;
-    public Text levelText;
-    
-
+    private int number;
+    public Text thistext;
+    public string meter;
     // Start is called before the first frame update
     void Start()
     {
-        level = 1;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        levelText.text = "Level: " + level;
-        //retrieve...
-        
+        thistext.text = meter + ":  " + number;
+
+    }
+
+    public void setNumber(int numberToSet)
+    {
+        number = numberToSet;
     }
 }
