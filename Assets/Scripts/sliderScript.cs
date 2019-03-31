@@ -5,26 +5,16 @@ using UnityEngine.UI;
 
 public class sliderScript : MonoBehaviour
 {
-    public int number;
+    public float number;
     public Slider slider;
     public string meterName;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        slider.value = number;
-        // update with meterScript simulatenously...
-    }
-
-    void setSliderValue(int sliderValue)
+   
+    public void setSliderValue(float sliderValue)
     {
         number = sliderValue;
+        slider.value = number;
     }
 
 }
