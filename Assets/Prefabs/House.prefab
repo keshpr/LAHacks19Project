@@ -105,11 +105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74e638182f65cb4c9cdc1f0dbc07e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
   POPUP: {fileID: 8017577367084774726, guid: 7fc34ea6f0d3e5f46b297a7638b1b4fd, type: 3}
   POPUP_OFFSET: 10
   requiredResources:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4365964281258873977, guid: d6e2bb13c510ce040bfaa1c563bf7091, type: 3}
+  - {fileID: 8898150913657742663, guid: c1412ca500031a34eb72092eda7c6be7, type: 3}
   decrementRate:
   - 0
   - 2
@@ -137,5 +138,5 @@ MonoBehaviour:
   - 0
   - 0
   dependentResources:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4365964281258873977, guid: d6e2bb13c510ce040bfaa1c563bf7091, type: 3}
+  - {fileID: 8898150913657742663, guid: c1412ca500031a34eb72092eda7c6be7, type: 3}

@@ -46,7 +46,7 @@ MonoBehaviour:
   resources:
   - {fileID: 4365964281258873977, guid: d6e2bb13c510ce040bfaa1c563bf7091, type: 3}
   - {fileID: 8898150913657742663, guid: c1412ca500031a34eb72092eda7c6be7, type: 3}
-  - {fileID: 0}
+  - {fileID: 7154054595976427857, guid: e5ea5faf91366624aa93dcbec870ec22, type: 3}
   initResourceAmts:
   - 50
   - 30

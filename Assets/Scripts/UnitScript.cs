@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitScript : MonoBehaviour
 {
 
-    
+    public GameObject MainCamera;
     public GameObject POPUP;
     public float POPUP_OFFSET = 10;
     public GameObject[] requiredResources;
@@ -44,8 +44,16 @@ public class UnitScript : MonoBehaviour
             //Debug.Log( currentAmount[i] );
             
             if ( currentAmount[i] < THRESHOLD && !hasPopupAppeared ){
+                
                 popup = Instantiate( POPUP, new Vector3(transform.position.x, transform.position.y + POPUP_OFFSET, transform.position.z) , Quaternion.identity);
+                
                 hasPopupAppeared = true;
+            
+                //Making the popup look at main camera code
+                Vector3 lookPoint = popup.transform.position - MainCamera.transform.position;
+                lookPoint.y = MainCamera.transform.position.y;
+                popup.transform.LookAt( lookPoint );
+            
             }
             
         }
