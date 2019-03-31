@@ -27,6 +27,7 @@ public class GameControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         winLevel.SetActive(false);
         loseLevel.SetActive(false);
         cursor = this.gameObject.GetComponent<CursorScript>();
@@ -72,7 +73,7 @@ public class GameControllerScript : MonoBehaviour
                 Time.timeScale = 0;
                 loseLevel.SetActive(true);
             }
-            else if (resources[i].tag == "House" && resourceAmounts[i] > 2 * initResourceAmts[i] + 10)
+            else if (resources[i].tag == "House" && resourceAmounts[i] >= 2 * initResourceAmts[i] + 10)
             {
                 //win game
                 Time.timeScale = 0;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -339,6 +339,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229954725}
   m_CullTransparentMesh: 0
+--- !u!114 &319934655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2884665023677242887, guid: 2929fa51dc6a2d14bb3a01b103c60555,
+    type: 3}
+  m_PrefabInstance: {fileID: 1385098498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f27a3566019c41df9a616d7bed9154f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &375281313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -899,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c79c98d578a9b47abd3430e1d36584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incrRate: 0.5
+  incrRate: 3
   decrRateMax: 2
   minDependentAmounts:
   - 0
@@ -1197,17 +1209,42 @@ PrefabInstance:
         type: 3}
       propertyPath: foodSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1385098501}
     - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
         type: 3}
       propertyPath: populationSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1385098500}
     - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
         type: 3}
       propertyPath: waterSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1385098499}
+    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
+        type: 3}
+      propertyPath: foodText
+      value: 
+      objectReference: {fileID: 319934655}
+    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
+        type: 3}
+      propertyPath: populationText
+      value: 
+      objectReference: {fileID: 1323902954}
+    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
+        type: 3}
+      propertyPath: waterText
+      value: 
+      objectReference: {fileID: 1871451516}
+    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
+        type: 3}
+      propertyPath: winLevel
+      value: 
+      objectReference: {fileID: 662108237}
+    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
+        type: 3}
+      propertyPath: loseLevel
+      value: 
+      objectReference: {fileID: 559940026}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3592c77569c7d249ab202392414461a, type: 3}
 --- !u!1001 &1108540565
@@ -1520,6 +1557,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231348671}
   m_CullTransparentMesh: 0
+--- !u!114 &1323902954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2884665024437504626, guid: 2929fa51dc6a2d14bb3a01b103c60555,
+    type: 3}
+  m_PrefabInstance: {fileID: 1385098498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f27a3566019c41df9a616d7bed9154f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1385098498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1637,6 +1686,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2884665024549936048, guid: 2929fa51dc6a2d14bb3a01b103c60555,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2884665024549936048, guid: 2929fa51dc6a2d14bb3a01b103c60555,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884665024549936048, guid: 2929fa51dc6a2d14bb3a01b103c60555,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2884665023501901279, guid: 2929fa51dc6a2d14bb3a01b103c60555,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1665,21 +1729,6 @@ PrefabInstance:
     - target: {fileID: 2884665024375217940, guid: 2929fa51dc6a2d14bb3a01b103c60555,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2884665024549936048, guid: 2929fa51dc6a2d14bb3a01b103c60555,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 2884665024549936048, guid: 2929fa51dc6a2d14bb3a01b103c60555,
-        type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2884665024549936048, guid: 2929fa51dc6a2d14bb3a01b103c60555,
-        type: 3}
-      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2082,6 +2131,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756612752}
   m_CullTransparentMesh: 0
+--- !u!114 &1871451516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2884665022896668286, guid: 2929fa51dc6a2d14bb3a01b103c60555,
+    type: 3}
+  m_PrefabInstance: {fileID: 1385098498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f27a3566019c41df9a616d7bed9154f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1922154951
 GameObject:
   m_ObjectHideFlags: 0
