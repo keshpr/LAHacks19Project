@@ -44,10 +44,14 @@ public class GameControllerScript : MonoBehaviour
         {
             if (resources[i].tag == resourceTag)
             {
-                break;
+                resourceAmounts[i] -= amount;
+                if( resourceAmounts[i] < 0 )
+                {
+                    resourceAmounts[i] = 0;
+                }
             }
         }
-        resourceAmounts[i] -= amount;
+        
     }
     public void incrementResource(string resourceTag, float amount)
     {
@@ -56,10 +60,15 @@ public class GameControllerScript : MonoBehaviour
         {
             if (resources[i].tag == resourceTag)
             {
-                break;
+                resourceAmounts[i] += amount;
+                if( resourceAmounts[i] < 0 )
+                {
+                    resourceAmounts[i] = 0;
+                }
             }
         }
-        resourceAmounts[i] += amount;
+        
+        
     }
     public float getResourceAmount(string resourceTag)
     {
@@ -68,10 +77,10 @@ public class GameControllerScript : MonoBehaviour
         {
             if (resources[i].tag == resourceTag)
             {
-                break;
+                return resourceAmounts[i];
             }
         }
-        return resourceAmounts[i];
+        return -1;
     }
     public void setActiveResource(GameObject resource)
     {
