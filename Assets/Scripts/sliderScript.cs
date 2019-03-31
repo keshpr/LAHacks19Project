@@ -17,4 +17,9 @@ public class sliderScript : MonoBehaviour
         slider.value = number;
     }
 
+    public void setMaxValue(float value)
+    {
+        slider.maxValue = value;
+    }
+
 }

@@ -10,15 +10,26 @@ public class GameControllerScript : MonoBehaviour
     private float[] resourceAmounts;
     GameObject activeResource;
     int numResources;
-    float times;
+    //float times;
 
     public sliderScript foodSlider;
     public sliderScript populationSlider;
     public sliderScript waterSlider;
+
+    public meterScript foodText;
+    public meterScript populationText;
+    public meterScript waterText;
+
+    public GameObject winLevel;
+    public GameObject loseLevel;
+
     CursorScript cursor;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+        winLevel.SetActive(false);
+        loseLevel.SetActive(false);
         cursor = this.gameObject.GetComponent<CursorScript>();
         activeResource = null;
         numResources = resources.Length;
@@ -27,6 +38,21 @@ public class GameControllerScript : MonoBehaviour
         for (int i = 0; i < numResources; i++)
         {
             resourceAmounts[i] = initResourceAmts[i];
+            if(resources[i].tag == "House")
+            {
+                populationSlider.setMaxValue(2 * initResourceAmts[i] + 10);
+                populationText.setNumber(initResourceAmts[i]);
+            }
+                else if (resources[i].tag == "Farm")
+            {
+                foodSlider.setMaxValue(2 * initResourceAmts[i] + 10);
+                foodText.setNumber(initResourceAmts[i]);
+            }
+            else if (resources[i].tag == "River")
+            {
+                waterSlider.setMaxValue(2 * initResourceAmts[i] + 10);
+                waterText.setNumber(initResourceAmts[i]);
+            }
         }
 
     }
@@ -34,79 +60,86 @@ public class GameControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        times += Time.deltaTime;
-        if (times >= 1)
+        //times += Time.deltaTime;
+        //if (times >= 1)
+        //{
+        //    times = 0;
+        for (int i = 0; i < resources.Length; i++)
         {
-            times = 0;
-            for (int i = 0; i < resources.Length; i++)
+            //Debug.Log(resources[i].tag + " : " + resourceAmounts[i]);
+            if (resources[i].tag == "House" && resourceAmounts[i] <= 0)
             {
-                Debug.Log(resources[i].tag + " : " + resourceAmounts[i]);
+                //lose game
+                Time.timeScale = 0;
+                loseLevel.SetActive(true);
+            }
+            else if (resources[i].tag == "House" && resourceAmounts[i] >= 2 * initResourceAmts[i] + 10)
+            {
+                //win game
+                Time.timeScale = 0;
+                winLevel.SetActive(true);
             }
         }
+        
     }
     public void decrementResource(string resourceTag, float amount)
     {
         int i;
-        for (i = 0; i < numResources; i++)
+        for (i = 0; Time.timeScale != 0 && i < numResources; i++)
         {
             if (resources[i].tag == resourceTag)
             {
                 //Debug.Log( "In decrement resource" + resourceTag );
                 resourceAmounts[i] -= amount;
-                if( resourceAmounts[i] < 0 )
-                {
-                    resourceAmounts[i] = 0;
-                }
-                if (resources[i].tag == "House")
-                {
-                    populationSlider.setSliderValue(resourceAmounts[i]);
-                }
-                else if (resources[i].tag == "Farm")
-                {
-                    foodSlider.setSliderValue(resourceAmounts[i]);
-                }
-                else if (resources[i].tag == "River")
-                {
-                    waterSlider.setSliderValue(resourceAmounts[i]);
-                }
-                
+
+                handleResources(i);
                 break;
             }
         }
         
     }
+    
     public void incrementResource(string resourceTag, float amount)
     {
         int i;
-        for (i = 0; i < numResources; i++)
+        for (i = 0; Time.timeScale != 0 && i < numResources; i++)
         {
             if (resources[i].tag == resourceTag)
             {
                 //Debug.Log( "In increment resource" + resourceTag );
                 resourceAmounts[i] += amount;
-                if( resourceAmounts[i] < 0 )
-                {
-                    resourceAmounts[i] = 0;
-                }
-                
-                if (resources[i].tag == "House")
-                {
-                    populationSlider.setSliderValue(resourceAmounts[i]);
-                }
-                else if (resources[i].tag == "Farm")
-                {
-                    foodSlider.setSliderValue(resourceAmounts[i]);
-                }
-                else if (resources[i].tag == "River")
-                {
-                    waterSlider.setSliderValue(resourceAmounts[i]);
-                }
+                handleResources(i);
                 break;
                 
             }
+        }        
+        
+    }
+    void handleResources(int i)
+    {
+        if (resourceAmounts[i] < 0)
+        {
+            resourceAmounts[i] = 0;
         }
-        
-        
+        if (resourceAmounts[i] >= 2 * initResourceAmts[i] + 10)
+        {
+            resourceAmounts[i] = 2 * initResourceAmts[i] + 10;
+        }
+        if (resources[i].tag == "House")
+        {
+            populationSlider.setSliderValue(resourceAmounts[i]);
+            populationText.setNumber(resourceAmounts[i]);
+        }
+        else if (resources[i].tag == "Farm")
+        {
+            foodSlider.setSliderValue(resourceAmounts[i]);
+            foodText.setNumber(resourceAmounts[i]);
+        }
+        else if (resources[i].tag == "River")
+        {
+            waterSlider.setSliderValue(resourceAmounts[i]);
+            waterText.setNumber(resourceAmounts[i]);
+        }
     }
     public float getResourceAmount(string resourceTag)
     {
@@ -141,7 +174,7 @@ public class GameControllerScript : MonoBehaviour
     }
     public bool canPickupResource()
     {
-        if (activeResource == null)
+        if (activeResource == null && Time.timeScale != 0)
             return true;
         return false;
     }

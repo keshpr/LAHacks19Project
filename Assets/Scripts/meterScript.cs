@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class meterScript : MonoBehaviour
 {
-    private int number;
+    private float number;
     public Text thistext;
     public string meter;
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class meterScript : MonoBehaviour
 
     }
 
-    public void setNumber(int numberToSet)
+    public void setNumber(float numberToSet)
     {
         number = numberToSet;
     }
