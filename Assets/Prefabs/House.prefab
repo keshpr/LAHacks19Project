@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7154054595976427869}
   - component: {fileID: 7154054595976427858}
   - component: {fileID: 7154054595976427859}
-  m_Layer: 11
+  - component: {fileID: 1038174662}
+  - component: {fileID: 1038174667}
+  m_Layer: 13
   m_Name: House
   m_TagString: House
   m_Icon: {fileID: 0}
@@ -91,3 +93,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1038174662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154054595976427857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74e638182f65cb4c9cdc1f0dbc07e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  POPUP: {fileID: 8017577367084774726, guid: 7fc34ea6f0d3e5f46b297a7638b1b4fd, type: 3}
+  POPUP_OFFSET: 10
+  requiredResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  decrementRate:
+  - 0
+  - 2
+  initAmount:
+  - 10
+  - 10
+  currentAmount:
+  - 10
+  - 10
+--- !u!114 &1038174667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154054595976427857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c79c98d578a9b47abd3430e1d36584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incrRate: 0.5
+  decrRateMax: 2
+  minDependentAmounts:
+  - 0
+  - 0
+  dependentResources:
+  - {fileID: 0}
+  - {fileID: 0}

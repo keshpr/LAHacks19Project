@@ -17,8 +17,9 @@ public class FloorScript : MonoBehaviour
 
     }
 
-    void onMouseDown()
+    public void OnMouseDown()
     {
+        Debug.Log("Mouse on floor");
         gameController.removeActiveResource();
     }
 

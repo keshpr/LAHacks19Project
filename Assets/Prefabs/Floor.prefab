@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9180168444483742013}
   - component: {fileID: 9180168444483742014}
   - component: {fileID: 9180168444483742010}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

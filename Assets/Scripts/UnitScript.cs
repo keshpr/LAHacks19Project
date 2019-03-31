@@ -12,10 +12,11 @@ public class UnitScript : MonoBehaviour
     public float[] decrementRate;
     public float[] initAmount;
     public float[] currentAmount;
-    private const int THRESHOLD = 10;
+    public const int THRESHOLD = 2;
     private int numResources;
-    private bool hasPopupAppeared = false; 
-    
+    private bool hasPopupAppeared = false;
+
+    private GameObject popup;
     GameControllerScript gameController;
     
     // Start is called before the first frame update
@@ -40,10 +41,10 @@ public class UnitScript : MonoBehaviour
                 currentAmount[i] = 0;
             }
             
-            Debug.Log( currentAmount[i] );
+            //Debug.Log( currentAmount[i] );
             
             if ( currentAmount[i] < THRESHOLD && !hasPopupAppeared ){
-                Instantiate( POPUP, new Vector3(transform.position.x, transform.position.y + POPUP_OFFSET, transform.position.z) , Quaternion.identity);
+                popup = Instantiate( POPUP, new Vector3(transform.position.x, transform.position.y + POPUP_OFFSET, transform.position.z) , Quaternion.identity);
                 hasPopupAppeared = true;
             }
             
@@ -51,7 +52,8 @@ public class UnitScript : MonoBehaviour
     }
     
     //If Mouse pressed on the object check what is the currentActiveResource and if it matches then remake the value of currentAmount.
-    void onMouseDown(){
+    public void OnMouseDown(){
+        Debug.Log("Mouse on unit");
         GameObject activeResource = gameController.getActiveResource();
         if ( activeResource == null ){
             return;
@@ -59,7 +61,15 @@ public class UnitScript : MonoBehaviour
         
         for ( int i = 0; i < numResources; i++ ){
             if ( activeResource.tag == requiredResources[i].tag ){
+                gameController.decrementResource(activeResource.tag, initAmount[i] - currentAmount[i]);
                 currentAmount[i] = initAmount[i];
+                if (this.gameObject.tag == "House")
+                {
+                    this.gameObject.GetComponent<ResourceScript>().resetDecrRate();
+                }
+                Destroy(popup);
+                hasPopupAppeared = false;
+
             }
         }
     }

@@ -10,6 +10,7 @@ public class GameControllerScript : MonoBehaviour
     private float[] resourceAmounts;
     GameObject activeResource;
     int numResources;
+    float times;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,15 @@ public class GameControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        times += Time.deltaTime;
+        if (times >= 1)
+        {
+            times = 0;
+            for (int i = 0; i < resources.Length; i++)
+            {
+                Debug.Log(resources[i].tag + " : " + resourceAmounts[i]);
+            }
+        }
     }
     public void decrementResource(string resourceTag, float amount)
     {

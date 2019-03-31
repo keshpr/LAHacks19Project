@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8898150913657742660}
   - component: {fileID: 927543723}
   - component: {fileID: 927543724}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Farm
   m_TagString: Farm
   m_Icon: {fileID: 0}
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c79c98d578a9b47abd3430e1d36584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incrRate: 3
-  decrRate: 0
+  incrRate: 1
+  decrRateMax: 2
   minDependentAmounts:
   - 0
   dependentResources:
@@ -123,9 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74e638182f65cb4c9cdc1f0dbc07e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  POPUP: {fileID: 0}
+  POPUP: {fileID: 8017577367084774726, guid: 7fc34ea6f0d3e5f46b297a7638b1b4fd, type: 3}
   POPUP_OFFSET: 10
-  requiredResources: []
+  requiredResources:
+  - {fileID: 0}
   decrementRate:
   - 1
   initAmount:
