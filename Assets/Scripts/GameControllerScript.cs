@@ -48,6 +48,8 @@ public class GameControllerScript : MonoBehaviour
             }
         }
         resourceAmounts[i] -= amount;
+        if (resourceAmounts[i] < 0)
+            resourceAmounts[i] = 0;
     }
     public void incrementResource(string resourceTag, float amount)
     {
@@ -60,6 +62,8 @@ public class GameControllerScript : MonoBehaviour
             }
         }
         resourceAmounts[i] += amount;
+        if (resourceAmounts[i] < 0)
+            resourceAmounts[i] = 0;
     }
     public float getResourceAmount(string resourceTag)
     {
