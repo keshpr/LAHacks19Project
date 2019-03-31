@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -697,8 +697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbde2a78581c4462b6b7cad2bffb038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  levelText: {fileID: 380148800}
 --- !u!1 &389174327
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280510e98c9c84444beb7d96dcc53c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  number: 0
+  slider: {fileID: 786200438}
   meterName: Food
 --- !u!114 &786200438
 MonoBehaviour:
@@ -934,7 +933,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 211357044}
   m_FillRect: {fileID: 416816643}
   m_HandleRect: {fileID: 211357043}
@@ -1069,7 +1068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280510e98c9c84444beb7d96dcc53c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  number: 0
+  slider: {fileID: 827871876}
   meterName: Population
 --- !u!114 &827871876
 MonoBehaviour:
@@ -1106,7 +1106,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1506799539}
   m_FillRect: {fileID: 166940862}
   m_HandleRect: {fileID: 1506799538}
@@ -1548,7 +1548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280510e98c9c84444beb7d96dcc53c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  number: 0
+  slider: {fileID: 1263024566}
   meterName: 'Water '
 --- !u!114 &1263024566
 MonoBehaviour:
@@ -1585,7 +1586,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1693179081}
   m_FillRect: {fileID: 1435546399}
   m_HandleRect: {fileID: 1693179080}
