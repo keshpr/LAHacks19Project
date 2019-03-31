@@ -6,7 +6,7 @@ public class UnitScript : MonoBehaviour
 {
 
     public GameObject MainCamera;
-    public GameObject POPUP;
+    public GameObject[] POPUP;
     public float POPUP_OFFSET = 10;
     public GameObject[] requiredResources;
     public float[] decrementRate;
@@ -14,14 +14,15 @@ public class UnitScript : MonoBehaviour
     public float[] currentAmount;
     public const int THRESHOLD = 2;
     private int numResources;
-    private bool hasPopupAppeared = false;
-
-    private GameObject popup;
+    private bool[] hasPopupAppeared = new bool[2];
+    
+    private GameObject[] popup;
     GameControllerScript gameController;
     
     // Start is called before the first frame update
     void Start()
     {
+        popup = new GameObject[2];
         numResources = currentAmount.Length;
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControllerScript>();
         
@@ -43,16 +44,16 @@ public class UnitScript : MonoBehaviour
             
             //Debug.Log( currentAmount[i] );
             
-            if ( currentAmount[i] < THRESHOLD && !hasPopupAppeared ){
+            if ( currentAmount[i] < THRESHOLD && !hasPopupAppeared[i] ){
                 
-                popup = Instantiate( POPUP, new Vector3(transform.position.x, transform.position.y + POPUP_OFFSET, transform.position.z) , Quaternion.identity);
+                popup[i] = Instantiate( POPUP[i], new Vector3(transform.position.x + (i * 30), transform.position.y + POPUP_OFFSET, transform.position.z) , Quaternion.identity);
                 
-                hasPopupAppeared = true;
+                hasPopupAppeared[i] = true;
             
                 //Making the popup look at main camera code
-                Vector3 lookPoint = popup.transform.position - MainCamera.transform.position;
+                Vector3 lookPoint = popup[i].transform.position - MainCamera.transform.position;
                 lookPoint.y = MainCamera.transform.position.y;
-                popup.transform.LookAt( lookPoint );
+                popup[i].transform.LookAt( lookPoint );
             
             }
             
@@ -75,8 +76,8 @@ public class UnitScript : MonoBehaviour
                 {
                     this.gameObject.GetComponent<ResourceScript>().resetDecrRate();
                 }
-                Destroy(popup);
-                hasPopupAppeared = false;
+                Destroy(popup[i]);
+                hasPopupAppeared[i] = false;
 
             }
         }

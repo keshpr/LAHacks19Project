@@ -110,7 +110,7 @@ MonoBehaviour:
   minDependentAmounts:
   - 0
   dependentResources:
-  - {fileID: 4365964281258873977, guid: d6e2bb13c510ce040bfaa1c563bf7091, type: 3}
+  - {fileID: 0}
 --- !u!114 &927543724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   POPUP: {fileID: 8017577367084774726, guid: 7fc34ea6f0d3e5f46b297a7638b1b4fd, type: 3}
   POPUP_OFFSET: 10
   requiredResources:
-  - {fileID: 4365964281258873977, guid: d6e2bb13c510ce040bfaa1c563bf7091, type: 3}
+  - {fileID: 0}
   decrementRate:
   - 1
   initAmount:

@@ -44,11 +44,13 @@ public class GameControllerScript : MonoBehaviour
         {
             if (resources[i].tag == resourceTag)
             {
+                //Debug.Log( "In decrement resource" + resourceTag );
                 resourceAmounts[i] -= amount;
                 if( resourceAmounts[i] < 0 )
                 {
                     resourceAmounts[i] = 0;
                 }
+                break;
             }
         }
         
@@ -60,11 +62,13 @@ public class GameControllerScript : MonoBehaviour
         {
             if (resources[i].tag == resourceTag)
             {
+                //Debug.Log( "In increment resource" + resourceTag );
                 resourceAmounts[i] += amount;
                 if( resourceAmounts[i] < 0 )
                 {
                     resourceAmounts[i] = 0;
                 }
+                break;
             }
         }
         
