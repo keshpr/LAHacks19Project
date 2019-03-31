@@ -15,9 +15,11 @@ public class GameControllerScript : MonoBehaviour
     public sliderScript foodSlider;
     public sliderScript populationSlider;
     public sliderScript waterSlider;
+    CursorScript cursor;
     // Start is called before the first frame update
     void Start()
     {
+        cursor = this.gameObject.GetComponent<CursorScript>();
         activeResource = null;
         numResources = resources.Length;
         resourceAmounts = new float[numResources];
@@ -26,6 +28,7 @@ public class GameControllerScript : MonoBehaviour
         {
             resourceAmounts[i] = initResourceAmts[i];
         }
+
     }
 
     // Update is called once per frame
@@ -122,10 +125,19 @@ public class GameControllerScript : MonoBehaviour
         if (!canPickupResource())
             return;
         activeResource = resource;
+        if (resource.tag == "Farm")
+        {
+            cursor.makeSteak();
+        }
+        else if (resource.tag == "River")
+        {
+            cursor.makeWater();
+        }
     }
     public void removeActiveResource()
     {
         activeResource = null;
+        cursor.makeDefault();
     }
     public bool canPickupResource()
     {
