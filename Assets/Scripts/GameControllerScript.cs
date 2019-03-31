@@ -52,7 +52,18 @@ public class GameControllerScript : MonoBehaviour
         }
         resourceAmounts[i] += amount;
     }
-
+    public float getResourceAmount(string resourceTag)
+    {
+        int i;
+        for (i = 0; i < numResources; i++)
+        {
+            if (resources[i].tag == resourceTag)
+            {
+                break;
+            }
+        }
+        return resourceAmounts[i];
+    }
     public void setActiveResource(GameObject resource)
     {
         if (!canPickupResource())
