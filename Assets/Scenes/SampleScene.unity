@@ -347,10 +347,6 @@ PrefabInstance:
       propertyPath: dependentResources.Array.data[0]
       value: 
       objectReference: {fileID: 4365964281258873977}
-    - target: {fileID: 927543723, guid: c1412ca500031a34eb72092eda7c6be7, type: 3}
-      propertyPath: incrRate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 927543724, guid: c1412ca500031a34eb72092eda7c6be7, type: 3}
       propertyPath: requiredResources.Array.data[0]
       value: 
@@ -363,52 +359,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1928187560}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1038174662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038174661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74e638182f65cb4c9cdc1f0dbc07e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  POPUP: {fileID: 8017577367084774726, guid: 7fc34ea6f0d3e5f46b297a7638b1b4fd, type: 3}
-  POPUP_OFFSET: 10
-  requiredResources:
-  - {fileID: 4365964281258873977}
-  - {fileID: 1044136437}
-  decrementRate:
-  - 0
-  - 2
-  initAmount:
-  - 10
-  - 10
-  currentAmount:
-  - 10
-  - 10
---- !u!114 &1038174667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038174661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c79c98d578a9b47abd3430e1d36584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  incrRate: 0.5
-  decrRateMax: 2
-  minDependentAmounts:
-  - 0
-  - 0
-  dependentResources:
-  - {fileID: 4365964281258873977}
-  - {fileID: 1044136437}
 --- !u!1 &1044136437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8898150913657742663, guid: c1412ca500031a34eb72092eda7c6be7,
@@ -482,6 +432,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1038174662, guid: e5ea5faf91366624aa93dcbec870ec22, type: 3}
+      propertyPath: requiredResources.Array.data[0]
+      value: 
+      objectReference: {fileID: 4365964281258873977}
+    - target: {fileID: 1038174662, guid: e5ea5faf91366624aa93dcbec870ec22, type: 3}
+      propertyPath: requiredResources.Array.data[1]
+      value: 
+      objectReference: {fileID: 1044136437}
+    - target: {fileID: 1038174667, guid: e5ea5faf91366624aa93dcbec870ec22, type: 3}
+      propertyPath: dependentResources.Array.data[0]
+      value: 
+      objectReference: {fileID: 4365964281258873977}
+    - target: {fileID: 1038174667, guid: e5ea5faf91366624aa93dcbec870ec22, type: 3}
+      propertyPath: dependentResources.Array.data[1]
+      value: 
+      objectReference: {fileID: 1044136437}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5ea5faf91366624aa93dcbec870ec22, type: 3}
 --- !u!1001 &3328405637288564906
@@ -553,24 +519,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
         type: 3}
-      propertyPath: resources.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
-        type: 3}
-      propertyPath: initResourceAmts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
-        type: 3}
       propertyPath: resources.Array.data[2]
       value: 
       objectReference: {fileID: 1038174661}
-    - target: {fileID: 7004402427356465567, guid: b3592c77569c7d249ab202392414461a,
-        type: 3}
-      propertyPath: initResourceAmts.Array.data[2]
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3592c77569c7d249ab202392414461a, type: 3}
 --- !u!1 &4365964281258873977 stripped
@@ -645,11 +596,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4365964281258873978, guid: d6e2bb13c510ce040bfaa1c563bf7091,
-        type: 3}
-      propertyPath: incrRate
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e2bb13c510ce040bfaa1c563bf7091, type: 3}
