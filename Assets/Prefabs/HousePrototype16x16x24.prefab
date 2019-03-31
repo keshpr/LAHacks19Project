@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 2979857726985814271}
   - component: {fileID: 2979857726982914271}
   - component: {fileID: 2979857726983914015}
+  - component: {fileID: 5088348464373337031}
+  - component: {fileID: 5088348464373337028}
+  - component: {fileID: 5088348464373337083}
   m_Layer: 0
   m_Name: HousePrototype16x16x24
-  m_TagString: Untagged
+  m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,3 +80,65 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5088348464373337031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979857726986181855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 24, y: 16.000002, z: 16.000002}
+  m_Center: {x: 0.00000047683716, y: 7.9999995, z: 0.0000009536744}
+--- !u!114 &5088348464373337028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979857726986181855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c79c98d578a9b47abd3430e1d36584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incrRate: 3
+  decrRateMax: 2
+  minDependentAmounts:
+  - 0
+  - 0
+  dependentResources:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &5088348464373337083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979857726986181855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74e638182f65cb4c9cdc1f0dbc07e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
+  POPUP:
+  - {fileID: 6119397344951466494, guid: 7e6a91a84b07de74b9f9d300958eca98, type: 3}
+  - {fileID: 4579676492247663658, guid: c78615c9074180044a268a1bd98078ae, type: 3}
+  POPUP_OFFSET: 38
+  requiredResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  decrementRate:
+  - 1
+  - 2
+  initAmount:
+  - 10
+  - 10
+  currentAmount:
+  - 10
+  - 10

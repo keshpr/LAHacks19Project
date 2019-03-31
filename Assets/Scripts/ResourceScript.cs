@@ -15,6 +15,7 @@ public class ResourceScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        decrRateMax = incrRate + 2;
         decrRate = 0;
         unitScript = this.gameObject.GetComponent<UnitScript>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControllerScript>();
